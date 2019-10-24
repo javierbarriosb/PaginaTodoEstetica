@@ -306,18 +306,17 @@ img {
 }
 
 .nosotros::before {
-    background-image: url(/img/bg.jpg);
+    background-image: url(/static/img/bg.jpg);
     content: '';
 }
 
 @media (min-width: 568px) {
-    .contenido-nosotros{
+    .contenido-nosotros {
         padding: 0;
-      width: 25%;
-      height: 25%;
+        width: 25%;
+        height: 25%;
     }
 }
-
 
 .nosotros .contenido-nosotros {
     position: relative;
@@ -329,7 +328,7 @@ img {
 .nosotros .contenido-nosotros p {
     font-size: 1.1rem;
     font-family: 'Poppins', sans-serif;
-    width: 70%;
+    width: 60%;
     text-align: justify;
     padding-left: 20rem;
 }
@@ -577,13 +576,15 @@ textarea {
     font-weight: bold;
 }
 
-.InicioRedes button, .caja{
+.InicioRedes button,
+.caja {
     margin-bottom: 2%;
     padding: 1.5rem;
     text-transform: uppercase;
 }
 
-.InicioRedes button, .caja:hover{
+.InicioRedes button,
+.caja:hover {
     transform: scale(1.07)
 }
 

@@ -1,28 +1,28 @@
 {% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
-
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Todo Estetica - Inicio </title>
+
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/flexboxgrid.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Oswald|PT+Sans|Roboto&display=swap" rel="stylesheet">ç
 
 
-
-
+    <link rel="stylesheet" href="{% static 'css/flexboxgrid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <script src="/js/app.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
@@ -32,7 +32,7 @@
     <header id="header">
         <nav class="menu">
             <div class="logo">
-                <a href="index.html"><img src="img/Header/Logo_Oficial_3.png" alt="Imagen Logo"></a>
+                <a href="/"><img src="static/img/Header/Logo_Oficial_3.png" alt="Imagen Logo"></a>
                 <span class="btn-menu" id="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></span>
             </div>
 
@@ -50,7 +50,7 @@
         <div class="col-xs-12">
             <div class="texto-titulo">
                 <h2>¡Gracias por la visita!</h2>
-                <p>Echa un vistazo a nuestras marcas de pana</p>
+                <p>Echa un vistazo a nuestras marcas</p>
             </div>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -60,19 +60,19 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="/img/slider/1524075714_095963_1524075945_noticia_normal.jpg" alt="First slide">
+                        <img class="d-block w-100" src="static/img/slider/1524075714_095963_1524075945_noticia_normal.jpg" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="/img/slider/Chicas-que-no-usan-maquillaje-5.jpg" alt="Second slide">
+                        <img class="d-block w-100" src="static/img/slider/Chicas-que-no-usan-maquillaje-5.jpg" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="/img/slider/fondo_home.jpg" alt="Third slide">
+                        <img class="d-block w-100" src="static/img/slider/fondo_home.jpg" alt="Third slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="/img/slider/koco-maquillajes-coreanos.jpg" alt="Third slide">
+                        <img class="d-block w-100" src="static/img/slider/koco-maquillajes-coreanos.jpg" alt="Third slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="/img/slider/natura-tienda-728.jpg" alt="Third slide">
+                        <img class="d-block w-100" src="static/img/slider/natura-tienda-728.jpg" alt="Third slide">
                     </div>
 
                 </div>
@@ -105,7 +105,7 @@
                 <h2>¡Ofertas Ricardas!</h2>
 
                 <article class="entrada ">
-                    <img src="img/01.png" alt="texto entrada">
+                    <img src="static/img/01.png" alt="texto entrada">
                     <div class="contenido">
                         <h3 class="precio">$11.990</h3>
                         <h3>Mac</h3>
@@ -119,7 +119,7 @@
                     </div>
                 </article>
                 <article class="entrada">
-                    <img src="img/paleta-dbs.png" alt="texto entrada">
+                    <img src="static/img/paleta-dbs.png" alt="texto entrada">
                     <div class="contenido">
                         <h3 class="precio">$4.490</h3>
                         <h3>WET N WILD</h3>
@@ -133,7 +133,7 @@
                     </div>
                 </article>
                 <article class="entrada">
-                    <img src="img/esmaltes-paris.png" alt="texto entrada">
+                    <img src="static/img/esmaltes-paris.png" alt="texto entrada">
                     <div class="contenido">
 
                         <h3 class="precio">$4.230</h3>
@@ -148,7 +148,7 @@
                     </div>
                 </article>
                 <article class="entrada">
-                    <img src="img/crema-maicao.png" alt="texto entrada">
+                    <img src="static/img/crema-maicao.png" alt="texto entrada">
                     <div class="contenido">
                         <h3 class="precio">$1.990</h3>
                         <h3>SPA BE</h3>
@@ -162,7 +162,7 @@
                     </div>
                 </article>
                 <article class="entrada">
-                    <img src="img/encrespador-dbs.png" alt="texto entrada">
+                    <img src="static/img/encrespador-dbs.png" alt="texto entrada">
                     <div class="contenido">
                         <h3 class="precio">$16.990</h3>
                         <h3>TWEEZERMAN</h3>
@@ -176,7 +176,7 @@
                     </div>
                 </article>
                 <article class="entrada">
-                    <img src="img/jordana-preunic.png" alt="texto entrada">
+                    <img src="static/img/jordana-preunic.png" alt="texto entrada">
                     <div class="contenido">
                         <h3 class="precio">$1.490</h3>
                         <h3>Jordana</h3>
@@ -197,7 +197,7 @@
                 <h2>Agregados Recientemente</h2>
 
                 <article class="entrada">
-                    <img src="img/shampu-dbs.png" alt="texto entrada">
+                    <img src="static/img/shampu-dbs.png" alt="texto entrada">
                     <div class="contenido">
                         <h3 class="precio">$10.490</h3>
                         <h3>BURT S BEES</h3>
@@ -211,7 +211,7 @@
                     </div>
                 </article>
                 <article class="entrada">
-                    <img src="img/paleta-maicao.png" alt="texto entrada">
+                    <img src="static/img/paleta-maicao.png" alt="texto entrada">
                     <div class="contenido">
                         <h3 class="precio">$9.990</h3>
                         <h3>PETRIZZIO</h3>
@@ -225,7 +225,7 @@
                     </div>
                 </article>
                 <article class="entrada">
-                    <img src="img/tlc-mac.png" alt="texto entrada">
+                    <img src="static/img/tlc-mac.png" alt="texto entrada">
                     <div class="contenido">
                         <h3 class="precio">$28.400</h3>
                         <h3>MAC</h3>
@@ -239,7 +239,7 @@
                     </div>
                 </article>
                 <article class="entrada">
-                    <img src="img/snow-mac.png" alt="texto entrada">
+                    <img src="static/img/snow-mac.png" alt="texto entrada">
                     <div class="contenido">
                         <h3 class="precio">$11.900</h3>
                         <h3>MAC</h3>
@@ -267,7 +267,7 @@
                     </div>
                 </article>
                 <article class="entrada">
-                    <img id="maicao2" src="img/crema-maicao2.png" alt="texto entrada">
+                    <img id="maicao2" src="static/img/crema-maicao2.png" alt="texto entrada">
                     <div class="contenido">
                         <h3 class="precio">$3.990</h3>
                         <h3>SPRING NATURAL</h3>
@@ -300,6 +300,11 @@
             <p>Todos los Derechos Reservados 2019 &copy; </p>
         </div>
     </footer>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/headroom.min.js' %}"></script>
+    <script src="{% static 'js/menu.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/headroom.min.js"></script>
