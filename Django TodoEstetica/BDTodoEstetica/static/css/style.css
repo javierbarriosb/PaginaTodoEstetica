@@ -306,14 +306,14 @@ img {
 }
 
 .nosotros::before {
-    background-image: url("{% static 'img/bg.jpg' %}");
+    background-image: url('/static/img/bg.jpg');
     content: '';
 }
 
 @media (min-width: 568px) {
     .contenido-nosotros {
         padding: 0;
-        width: 55%;
+        width: 25%;
         height: 25%;
     }
 }
