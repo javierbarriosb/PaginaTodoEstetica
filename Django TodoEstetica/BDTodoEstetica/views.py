@@ -8,3 +8,6 @@ def inicio(request):
 def tienda(request):
     return render(request,'TodoEstetica/tienda.html', {})
 
+def registro(request):
+    return render(request,'TodoEstetica/registro.html', {})
+
