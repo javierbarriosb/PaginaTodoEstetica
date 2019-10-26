@@ -13,7 +13,10 @@ class Cliente (models.Model):
 class Tienda (models.Model):
     
     NombreTienda = models.CharField(max_length=40)
-    Rut_Tienda = models.EmailField(primary_key=True,max_length=15)
+    Rut_Tienda = models.CharField(primary_key=True,max_length=15)
+
+    def __str__(self):
+     return self.NombreTienda
     
 class Vendedore (models.Model):
 
@@ -25,11 +28,12 @@ class Vendedore (models.Model):
 
 class Producto (models.Model):
     
-    NombreProducto = models.CharField(max_length=20)  
+    NombreProducto = models.CharField(max_length=50)  
     Precio = models.CharField(max_length=8)
     Descripcion = models.TextField()
     Marca = models.CharField(max_length=20)
     Imagen = models.ImageField(upload_to="ImagenProductos")
+    
 
     def __str__(self):
         return self.NombreProducto

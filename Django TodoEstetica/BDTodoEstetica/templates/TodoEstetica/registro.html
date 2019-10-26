@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load staticfiles %} {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +17,7 @@
 
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
+
 </head>
 
 <body>
@@ -30,7 +31,7 @@
             <div class="enlaces" id="enlaces">
                 <a href="#"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>Tiendas</a>
                 <a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Iniciar Sesión</a>
-                <a href="contacto.html"><i class="fa fa-envelope-o" aria-hidden="true"></i>Contacto</a>
+                <a href="{% url 'contacto'%}"><i class="fa fa-envelope-o" aria-hidden="true"></i>Contacto</a>
             </div>
         </nav>
     </header>
@@ -105,7 +106,7 @@
     <script src="{% static 'js/menu.js' %}"></script>
     <script src="{% static 'js/jquery.min.js' %}"></script>
 
-    <script src="{% static '/js/app.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
 
 
 </body>

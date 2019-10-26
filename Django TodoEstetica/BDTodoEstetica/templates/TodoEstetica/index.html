@@ -1,4 +1,4 @@
-{% load staticfiles %} {% load static %}
+{% load staticfiles %}{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,9 +11,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Oswald|PT+Sans|Roboto&display=swap" rel="stylesheet">ç
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Oswald|PT+Sans|Roboto&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -37,8 +36,8 @@
             <div class="enlaces" id="enlaces">
                 <a href="#"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>Tiendas</a>
                 <a href="{% url 'registro'%}"><i class="fa fa-user-plus" aria-hidden="true"></i>Registrarse</a>
-                <a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Iniciar Sesión</a>
-                <a href="contacto.html"><i class="fa fa-envelope-o" aria-hidden="true"></i>Contacto</a>
+                <a href="/admin/"><i class="fa fa-sign-in" aria-hidden="true"></i>Iniciar Sesión</a>
+                <a href="{% url 'contacto'%}"><i class="fa fa-envelope-o" aria-hidden="true"></i>Contacto</a>
             </div>
         </nav>
     </header>
@@ -97,187 +96,26 @@
     </div>
 
     <main class="productos">
-
         <div class="contenedor">
+
             <section class="contenido-principal">
                 <h2>¡Ofertas!</h2>
+                {% for Productos in Productos %}
+                    <article class="entrada ">
+                        <img src="{{Productos.Imagen.url}}" alt="texto entrada">
+                        <div class="contenido">
+                            <h3 class="precio">${{Productos.Precio}}</h3>
+                            <h3>{{Productos.Marca}}</h3>
+                            <p>{{Productos.NombreProducto}}</p>
+                            <p>Tienda:
+                                    <span>{{Tienda.NombreTienda}}</span>
 
-                <article class="entrada ">
-                    <img src="static/img/01.png" alt="texto entrada">
-                    <div class="contenido">
-                        <h3 class="precio">$11.990</h3>
-                        <h3>Mac</h3>
-                        <p>LOVE ME LIPSTICK</p>
-                        <p>por:
-                            <a target="_blank" href="https://www.maccosmetics.cl/">
-                                <span>Mac Cosmetics</span>
-                            </a>
-                        </p>
-                        <a target="_blank" href="https://www.maccosmetics.cl/product/13854/68146/products/makeup/labios/lipstick/love-me-lipstick" class="boton animacion-boton">Ver Producto</a>
-                    </div>
-                </article>
-                <article class="entrada">
-                    <img src="static/img/paleta-dbs.png" alt="texto entrada">
-                    <div class="contenido">
-                        <h3 class="precio">$4.490</h3>
-                        <h3>WET N WILD</h3>
-                        <p>PALETA CORRECTORA WET N WILD</p>
-                        <p>por:
-                            <a target="_blank" href="https://www.dbsbeautystore.cl/tienda/index.php?route=common/home">
-                                <span>DBS</span>
-                            </a>
-                        </p>
-                        <a target="_blank" href="https://www.dbsbeautystore.cl/tienda/index.php?route=product/product&product_id=7552" class="boton animacion-boton">Ver Producto</a>
-                    </div>
-                </article>
-                <article class="entrada">
-                    <img src="static/img/esmaltes-paris.png" alt="texto entrada">
-                    <div class="contenido">
-
-                        <h3 class="precio">$4.230</h3>
-                        <h3>Petrizzio</h3>
-                        <p>Set Esmalte de Uñas Pastel Nails</p>
-                        <p>por:
-                            <a target="_blank" href="https://www.paris.cl/home">
-                                <span>Paris</span>
-                            </a>
-                        </p>
-                        <a target="_blank" href="https://www.paris.cl/set-esmalte-de-unas-pastel-nails-petrizzio-424029999.html?v=1&cgid=blzMaqUnas&utm_expid=.QbUPlzUhSy-HE20LgRINbA.1&utm_referrer=https%3A%2F%2Fwww.paris.cl%2Fbelleza%2Fmaquillaje%2Funas%2F#start=1" class="boton animacion-boton">Ver Producto</a>
-                    </div>
-                </article>
-                <article class="entrada">
-                    <img src="static/img/crema-maicao.png" alt="texto entrada">
-                    <div class="contenido">
-                        <h3 class="precio">$1.990</h3>
-                        <h3>SPA BE</h3>
-                        <p>CREMA MANOS 100 GRS CASTAÑA</p>
-                        <p>por:
-                            <a target="_blank" href="https://virtual.maicao.cl/">
-                                <span>Maicao</span>
-                            </a>
-                        </p>
-                        <a target="_blank" href="https://virtual.maicao.cl/cuidado-de-la-piel/9214-crema-manos-100-grs-castaa.html" class="boton animacion-boton">Ver Producto</a>
-                    </div>
-                </article>
-                <article class="entrada">
-                    <img src="static/img/encrespador-dbs.png" alt="texto entrada">
-                    <div class="contenido">
-                        <h3 class="precio">$16.990</h3>
-                        <h3>TWEEZERMAN</h3>
-                        <p>ENCRESPADOR DE PESTAÑAS PROCURL</p>
-                        <p>por:
-                            <a target="_blank" href="https://www.dbsbeautystore.cl/tienda/index.php?route=common/home">
-                                <span>DBS</span>
-                            </a>
-                        </p>
-                        <a target="_blank" href="https://www.dbsbeautystore.cl/tienda/index.php?route=product/product&path=71_123&product_id=10293" class="boton animacion-boton">Ver Producto</a>
-                    </div>
-                </article>
-                <article class="entrada">
-                    <img src="static/img/jordana-preunic.png" alt="texto entrada">
-                    <div class="contenido">
-                        <h3 class="precio">$1.490</h3>
-                        <h3>Jordana</h3>
-                        <p>LÁPIZ LABIAL PLUM OBSESSION MG-60</p>
-                        <p>por:
-                            <a target="_blank" href="https://preunic.cl/">
-                                <span>Preunic</span>
-                            </a>
-                        </p>
-                        <a target="_blank" href="https://preunic.cl/products/lapiz-labial-plum-obsession-mg-60?default_sku=63" class="boton animacion-boton">Ver Producto</a>
-                    </div>
-                </article>
-            </section>
-        </div>
-
-        <div class="contenedor">
-            <section class="contenido-principal">
-                <h2>Agregados Recientemente</h2>
-
-                <article class="entrada">
-                    <img src="static/img/shampu-dbs.png" alt="texto entrada">
-                    <div class="contenido">
-                        <h3 class="precio">$10.490</h3>
-                        <h3>BURT S BEES</h3>
-                        <p>TRATAMIENTO DE CABELLO CON PALTA</p>
-                        <p>por:
-                            <a target="_blank" href="https://www.dbsbeautystore.cl/tienda/index.php?route=common/home">
-                                <span>DBS</span>
-                            </a>
-                        </p>
-                        <a target="_blank" href="https://www.dbsbeautystore.cl/tienda/index.php?route=product/product&path=68_253&product_id=8473" class="boton animacion-boton">Ver Producto</a>
-                    </div>
-                </article>
-                <article class="entrada">
-                    <img src="static/img/paleta-maicao.png" alt="texto entrada">
-                    <div class="contenido">
-                        <h3 class="precio">$9.990</h3>
-                        <h3>PETRIZZIO</h3>
-                        <p>EST. SOMBRA+RUBOR+POLVO NEW YORK</p>
-                        <p>por:
-                            <a target="_blank" href="https://virtual.maicao.cl/">
-                                <span>Maicao</span>
-                            </a>
-                        </p>
-                        <a target="_blank" href="https://virtual.maicao.cl/maquillaje/1470-est-sombraruborpolvo-new-york.html" class="boton animacion-boton">Ver Producto</a>
-                    </div>
-                </article>
-                <article class="entrada">
-                    <img src="static/img/tlc-mac.png" alt="texto entrada">
-                    <div class="contenido">
-                        <h3 class="precio">$28.400</h3>
-                        <h3>MAC</h3>
-                        <p>PREP + PRIME BB BEAUTY BALM</p>
-                        <p>por:
-                            <a target="_blank" href="https://www.maccosmetics.cl/">
-                                <span>MAC</span>
-                            </a>
-                        </p>
-                        <a target="_blank" href="https://www.maccosmetics.cl/product/14771/22075/products/preps-tratamientos/bb-cc/prep-prime-bb-beauty-balm-compact-spf-30#/shade/Light_Plus" class="boton animacion-boton">Ver Producto</a>
-                    </div>
-                </article>
-                <article class="entrada">
-                    <img src="static/img/snow-mac.png" alt="texto entrada">
-                    <div class="contenido">
-                        <h3 class="precio">$11.900</h3>
-                        <h3>MAC</h3>
-                        <p>SNOW BALL PIGMENT AND GLITTER KIT</p>
-                        <p>por:
-                            <a target="_blank" href="https://www.maccosmetics.cl/">
-                                <span>MAC</span>
-                            </a>
-                        </p>
-                        <a target="_blank" href="https://www.maccosmetics.cl/product/13848/52239/products/makeup/rostro/multiuso/snow-ball-pigment-and-glitter-kit" class="boton animacion-boton">Ver Producto</a>
-                    </div>
-                </article>
-                <article class="entrada">
-                    <img src="static/img/secador-ripley.png" alt="texto entrada">
-                    <div class="contenido">
-                        <h3 class="precio">$69.990</h3>
-                        <h3>SIEGEN</h3>
-                        <p>SECADOR DE ESMALTE SIEGEN SG-1250</p>
-                        <p>por:
-                            <a target="_blank" href="https://simple.ripley.cl/">
-                                <span>Ripley</span>
-                            </a>
-                        </p>
-                        <a target="_blank" href="https://simple.ripley.cl/secador-de-esmalte-siegen-sg-1250-2000369154275p" class="boton animacion-boton">Ver Producto</a>
-                    </div>
-                </article>
-                <article class="entrada">
-                    <img id="maicao2" src="static/img/crema-maicao2.png" alt="texto entrada">
-                    <div class="contenido">
-                        <h3 class="precio">$3.990</h3>
-                        <h3>SPRING NATURAL</h3>
-                        <p>ESTUCHE CREMA MANOS 126ML X2</p>
-                        <p>por:
-                            <a target="_blank" href="https://virtual.maicao.cl/">
-                                <span>Maicao</span>
-                            </a>
-                        </p>
-                        <a target="_blank" href="https://virtual.maicao.cl/cuidado-de-la-piel/9222-estuche-crema-manos-126ml-x2.html" class="boton animacion-boton">Ver Producto</a>
-                    </div>
-                </article>
+                            </p>
+                            <a target="_blank" href="#" class="boton animacion-boton">Ver Producto</a>
+                        </div>
+                    </article>
+                {% endfor %}
+          
             </section>
         </div>
     </main>

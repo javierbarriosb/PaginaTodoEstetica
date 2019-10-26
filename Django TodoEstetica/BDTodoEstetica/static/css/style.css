@@ -313,8 +313,8 @@ img {
 @media (min-width: 568px) {
     .contenido-nosotros {
         padding: 0;
-        width: 25%;
-        height: 25%;
+        width: 35%;
+        height: 85%;
     }
 }
 
