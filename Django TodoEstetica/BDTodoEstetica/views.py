@@ -1,11 +1,11 @@
 from django.shortcuts import render
-
+from .models import Producto,Tienda
 
 # Create your views here.
 
 def inicio(request):
-
-    return render(request,'TodoEstetica/index.html', {})
+    Productos = Producto.objects.all()
+    return render(request,'TodoEstetica/index.html', {'Productos':Productos})
 
 def tienda(request):
     return render(request,'TodoEstetica/tienda.html', {})
