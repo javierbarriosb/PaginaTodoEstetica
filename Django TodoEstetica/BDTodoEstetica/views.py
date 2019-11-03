@@ -1,0 +1,18 @@
+from django.shortcuts import render
+from .models import Producto,Tienda
+
+# Create your views here.
+
+def inicio(request):
+    Productos = Producto.objects.all()
+    return render(request,'TodoEstetica/index.html', {'Productos':Productos})
+
+def tienda(request):
+    return render(request,'TodoEstetica/tienda.html', {})
+
+def registro(request):
+    return render(request,'TodoEstetica/registro.html', {})
+
+def contacto(request):
+    return render(request,'TodoEstetica/contacto.html', {})
+
