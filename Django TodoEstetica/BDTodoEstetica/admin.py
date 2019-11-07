@@ -11,7 +11,7 @@ class ProductoAdmin(admin.ModelAdmin):
     readonly_fields = ["Creacion","Actualizacion"]
     list_display = ["NombreProducto","Marca","Precio"]
     search_fields = ["NombreProducto"]
-    list_filter = ["Marca" , "Tiendas"]
+    list_filter = ["Marca" , "Tienda"]
 
 admin.site.register(Tienda,TiendaAdmin) 
 admin.site.register(Producto,ProductoAdmin)

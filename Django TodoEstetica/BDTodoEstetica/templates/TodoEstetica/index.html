@@ -107,10 +107,10 @@
                         <h3 class="precio">${{Productos.Precio}}</h3>
                         <h3>{{Productos.Marca}}</h3>
                         <p>{{Productos.NombreProducto}}</p>
-                        <p>Tienda:
-                            <span>{{Productos.Tiendas}}</span>
-
+                        <p>Tiendas: {% for Tienda in Productos.Tienda.all%}
+                            <span>{{Tienda.NombreTienda}}</span>
                         </p>
+                        {% endfor %}
                         <a target="_blank" href="#" class="boton animacion-boton">Ver Producto</a>
                     </div>
                 </article>

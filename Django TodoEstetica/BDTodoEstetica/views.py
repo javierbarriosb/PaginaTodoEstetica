@@ -5,7 +5,8 @@ from .models import Producto,Tienda
 
 def inicio(request):
     Productos = Producto.objects.all()
-    return render(request,'TodoEstetica/index.html', {'Productos':Productos})
+    Tiendas = Tienda.objects.all()
+    return render(request,'TodoEstetica/index.html', {'Productos':Productos,'Tiendas':Tiendas})
 
 def tienda(request):
     return render(request,'TodoEstetica/tienda.html', {})
