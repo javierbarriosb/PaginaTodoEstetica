@@ -21,7 +21,7 @@ class Producto (models.Model):
     Descripcion = models.TextField()
     Marca = models.CharField(max_length=20)
     Tienda = models.ManyToManyField(Tienda)
-    Imagen = models.ImageField(upload_to="ImagenProductos")
+    Imagen = models.ImageField(upload_to="MediaProductos",null=True)
     Creacion = models.DateTimeField(auto_now_add=True)
     Actualizacion =models.DateTimeField(auto_now=True)
 

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'BDTodoEstetica',
     
+    
 ]
 
 MIDDLEWARE = [
@@ -124,4 +125,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #media files
 MEDIA_URL = '/media/'
-MEDIA_ROOt = os.path.join(BASE_DIR,"Media")
+MEDIA_ROOt = os.path.join(BASE_DIR,"media")

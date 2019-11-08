@@ -1,4 +1,4 @@
- {% for Productos in object_list %}
+{% load staticfiles %}{% load static %} {% for Productos in object_list %}
 <article class="entrada ">
     <img src="{{Productos.Imagen.url}}" alt="texto entrada">
     <div class="contenido">
@@ -9,7 +9,7 @@
             <span>{{Tienda.NombreTienda}}</span>
         </p>
         {% endfor %}
-        <a target="_blank" href="{% url 'detail'%}" class=" boton animacion-boton ">Ver Producto</a>
+        <a target="_self" href="{% url 'inicio:detail' Productos.id%}" class=" boton animacion-boton ">Ver Producto</a>
     </div>
 </article>
 {% endfor %}

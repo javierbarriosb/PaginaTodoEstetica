@@ -2,7 +2,10 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from .models import Producto,Tienda
+from django.urls import reverse_lazy
+
 
 # Create your views here.
 
@@ -25,5 +28,17 @@ class listProducto(ListView):
 
 class DetailProducto(DetailView):
     model = Producto
+   
+class ProductoCreate(CreateView):
+    model = Producto
+    fields = ['NombreProducto','Precio','Descripcion','Marca','Tienda','Imagen']
+    success_url = reverse_lazy('inicio:inicio')
+    
+class ProductoUpdate(UpdateView):
+    model = Producto
+    fields = ['NombreProducto','Precio','Descripcion','Marca','Tienda','Imagen']
+    template_name_suffix = '_update_form'
 
+    def get_success_url(self):
+        return reverse_lazy('inicio:update',args=[self.object.id])+'?ok'
 
