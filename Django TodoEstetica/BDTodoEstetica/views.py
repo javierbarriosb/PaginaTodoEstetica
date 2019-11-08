@@ -1,19 +1,29 @@
 from django.shortcuts import render
+from django.views.generic.base import TemplateView
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from .models import Producto,Tienda
 
 # Create your views here.
 
-def inicio(request):
-    Productos = Producto.objects.all()
-    Tiendas = Tienda.objects.all()
-    return render(request,'TodoEstetica/index.html', {'Productos':Productos,'Tiendas':Tiendas})
 
-def tienda(request):
-    return render(request,'TodoEstetica/tienda.html', {})
+class inicio(TemplateView):
+     template_name = "BDTodoEstetica/index.html"
+     def get (self,request, *args, **kwargs):
+        Productos = Producto.objects.all()
+        Tiendas = Tienda.objects.all()
+        return render (request, self.template_name,{'Productos':Productos,'Tiendas':Tiendas})
 
-def registro(request):
-    return render(request,'TodoEstetica/registro.html', {})
+class registro (TemplateView):
+     template_name = "BDTodoEstetica/registro.html"
 
-def contacto(request):
-    return render(request,'TodoEstetica/contacto.html', {})
+class contacto (TemplateView):
+    template_name = "BDTodoEstetica/contacto.html"
+
+class listProducto(ListView):
+    model = Producto
+
+class DetailProducto(DetailView):
+    model = Producto
+
 

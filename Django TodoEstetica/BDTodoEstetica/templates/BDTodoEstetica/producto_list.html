@@ -1,0 +1,15 @@
+ {% for Productos in object_list %}
+<article class="entrada ">
+    <img src="{{Productos.Imagen.url}}" alt="texto entrada">
+    <div class="contenido">
+        <h3 class="precio">${{Productos.Precio}}</h3>
+        <h3>{{Productos.Marca}}</h3>
+        <p>{{Productos.NombreProducto}}</p>
+        <p>Tiendas: {% for Tienda in Productos.Tienda.all%}
+            <span>{{Tienda.NombreTienda}}</span>
+        </p>
+        {% endfor %}
+        <a target="_blank" href="{% url 'detail'%}" class=" boton animacion-boton ">Ver Producto</a>
+    </div>
+</article>
+{% endfor %}

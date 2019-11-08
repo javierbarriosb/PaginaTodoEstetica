@@ -1,7 +1,6 @@
 {% load staticfiles %}{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -34,13 +33,14 @@
             </div>
 
             <div class="enlaces" id="enlaces">
-                <a href="#"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>Tiendas</a>
+                <a href="{% url 'lista'%}"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>Listar</a>
                 <a href="{% url 'registro'%}"><i class="fa fa-user-plus" aria-hidden="true"></i>Registrarse</a>
                 <a href="/admin/"><i class="fa fa-sign-in" aria-hidden="true"></i>Iniciar Sesión</a>
                 <a href="{% url 'contacto'%}"><i class="fa fa-envelope-o" aria-hidden="true"></i>Contacto</a>
             </div>
         </nav>
     </header>
+
 
 
     <div class="contenedor">
@@ -86,6 +86,11 @@
         </div>
 
     </div>
+    <div class="Fondo">
+
+
+    </div>
+
 
     <div class="nosotros parallax clearfix ">
         <div class="contenedor contenido-nosotros alineacion-nosotros">
