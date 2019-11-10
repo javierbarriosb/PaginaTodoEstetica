@@ -619,3 +619,9 @@ textarea {
         position: absolute;
     }
 }
+
+.cartas {
+    display: block;
+    flex-direction: flex;
+    background-color: #27135f;
+}

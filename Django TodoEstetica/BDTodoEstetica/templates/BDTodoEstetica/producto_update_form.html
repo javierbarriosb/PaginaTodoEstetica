@@ -6,7 +6,7 @@
 <div class="forms_control">
     {%if 'ok' in request.GET%}
     <p style="color:green"> Producto Actualizado correctamente</p>
-    <a href="{% url 'inicio:detail' object.id%}">Ver Camvios</a> {%endif%}
+    <a href="{% url 'inicio:detail' object.id%}">Ver Cambios</a> {%endif%}
     <form method="post">{% csrf_token %} {{ form.as_p }}
         <input type="submit" value="Update">
     </form>

@@ -1,7 +1,7 @@
 from django.urls import path
 from django.conf import settings
 from . import views
-from .views import registro,inicio,contacto,listProducto,DetailProducto,ProductoCreate,ProductoUpdate
+from .views import registro,inicio,contacto,listProducto,DetailProducto,ProductoCreate,ProductoUpdate,ProductoDelete
 
 pages_patterns = ([
     path('', inicio.as_view(), name = 'inicio'),
@@ -11,4 +11,5 @@ pages_patterns = ([
     path('<int:pk>/',DetailProducto.as_view(),name ='detail'), 
     path('create/',ProductoCreate.as_view(),name='create'),
     path('update/<int:pk>/',ProductoUpdate.as_view(),name='update'),
+    path('delete/<int:pk>/',ProductoDelete.as_view(),name='delete'),
 ],'inicio')
