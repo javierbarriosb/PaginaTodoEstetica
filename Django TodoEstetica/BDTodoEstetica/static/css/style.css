@@ -619,3 +619,8 @@ textarea {
         position: absolute;
     }
 }
+
+.cartas {
+    display: block;
+    flex-direction: flex;
+}

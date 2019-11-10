@@ -1,0 +1,18 @@
+{% load staticfiles %}{% load static %} {%include 'BDTodoEstetica/includes/menu.html'%} {% for Productos in object_list %}
+<section class="cartas">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <img src="{{Productos.Imagen.url}}" alt="texto entrada">
+            <h3 class="card-title">{{Productos.NombreProducto}}</h5>
+                <div class="text-center">
+                    <h4 class="card-subtitle mb-2 text-muted">{{Productos.Marca}}</h6>
+                        <h5 class="card-subtitle mb-2 text-muted">${{Productos.Precio}}</h6>
+                            {% for Tienda in Productos.Tienda.all%}
+                            <li class="card-text">{{Tienda.NombreTienda}}</li>
+                            {% endfor %}<br>
+                            <a href="{% url 'inicio:detail' Productos.id%}" class="text-center btn btn-primary">Ver Producto</a>
+                </div>
+        </div>
+    </div>
+</section>
+{% endfor %}

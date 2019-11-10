@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Tienda (models.Model):
@@ -20,8 +20,8 @@ class Producto (models.Model):
     Precio = models.CharField(max_length=8)
     Descripcion = models.TextField()
     Marca = models.CharField(max_length=20)
-    Tiendas= models.ManyToManyField(Tienda)
-    Imagen = models.ImageField(upload_to="ImagenProductos")
+    Tienda = models.ManyToManyField(Tienda)
+    Imagen = models.ImageField(upload_to="MediaProductos",null=True)
     Creacion = models.DateTimeField(auto_now_add=True)
     Actualizacion =models.DateTimeField(auto_now=True)
 
