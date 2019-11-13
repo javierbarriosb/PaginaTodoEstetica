@@ -109,11 +109,10 @@
 
     <main class="productos">
         <div class="contenedor">
-
             <section class="contenido-principal">
                 <h2>¡Ofertas!</h2>
                 {% for Productos in Productos %}
-                <article class="entrada ">
+                <article class="entrada">
                     <img src="{{Productos.Imagen.url}}" alt="texto entrada">
                     <div class="contenido">
                         <h3 class="precio">${{Productos.Precio}}</h3>
