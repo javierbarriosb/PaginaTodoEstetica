@@ -1,0 +1,29 @@
+{% extends "BDTodoEstetica/index.html" %}
+{% block title %}
+Inicar Sesión
+{% endblock title %}
+{% block slyder %}
+{% endblock %}
+{% block container %}
+{% endblock %}
+{% block content %}
+<form class="vista-log" action="" method="post">{% csrf_token %}
+    <div class="login cont-log">
+        <h3>Iniciar Sesión</h3>
+        {% if form.non_fied_errors %}
+            <p style="color:red">Usuario o contraseña incorrectos, intenta nuevamente.</p>
+        {% endif %}
+        <p>
+            <input class="" type="text" name="username" autofocus maxlenght="254" required
+                id="id_username" class="form-control" placeholder="Nombre de Usuario"/>
+        </p>
+        <p>
+            <input class="" type="password" name="password" autofocus required
+                id="id_password" class="form-control" placeholder="Contraseña"/>
+        </p>
+        <p><input type="submit" class="boton animacion-boton boton-log" value="Acceder"></p>
+    </div>
+</form>
+{% endblock %}
+{% block footer %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% load staticfiles %}{% load static %} {%include 'BDTodoEstetica/includes/menu.html'%} 
+
+<div class="card-deck container-fluid">
+{% for Productos in object_list %}
+<div class="mb-5 ml-5">
+  <div class="card">
+    <img src="{{Productos.Imagen.url}}" class="card-img-top img-fluid" alt="Imagen Producto">
+    <div class="card-body">
+      <h5 class="card-title">{{Productos.NombreProducto}}</h5>
+      <p class="card-text">{{Productos.Marca}}</p>
+      <p class="card-text">${{Productos.Precio}}</p>
+      {% for Tienda in Productos.Tienda.all%}
+        <li class="card-text">{{Tienda.NombreTienda}}</li>
+      {% endfor %}
+      <a href="{% url 'inicio:detail' Productos.id%}" class="text-center btn btn-primary">Ver Producto</a>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mns ago</small>
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>

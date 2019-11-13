@@ -16,16 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from BDTodoEstetica.urls import pages_patterns
+from django.conf.urls.static import static
 
 
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-    path('', include('BDTodoEstetica.urls')),
-    
+    path('', include(pages_patterns)),
+    # Paths de auts
+    path('accounts/', include('django.contrib.auth.urls'))
 ]
 
 
 if settings.DEBUG:
-     from django.conf.urls.static import static 
      urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT )

@@ -53,14 +53,14 @@ h2 {
 /**SLIDEEEEER**/
 
 .texto-titulo {
-    padding-top: 3rem;
+    padding-top: 8rem;
     text-align: center;
 }
 
 .texto-titulo p {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
-    margin-top: -3rem;
+    margin-top: 0;
 }
 
 .slide {
@@ -360,10 +360,9 @@ img {
 .site-footer {
     background-color: #575757;
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 1rem;
-    clear: both;
     width: 100%;
+    clear: both;
+    margin: 0;
 }
 
 .contenedor-footer {
@@ -619,3 +618,61 @@ textarea {
         position: absolute;
     }
 }
+
+.cartas {
+    display: block;
+    flex-direction: flex;
+}
+
+/**Descripcion producto DISEÑO**/
+.img_producto{
+    border: 2px solid #EEEBEB;
+    background-color: #ffffff;
+    border-radius: .3rem;
+}
+
+.img_producto img{
+    max-width: 100%;
+}
+
+.desc_producto{
+    margin-top: 2.3rem;
+    border: 2px solid #EEEBEB;
+    background-color: #ffffff;
+    border-radius: .3rem;
+}
+
+.container{
+    margin: 5rem 2rem 0 2rem;
+    display: flex;
+    max-width: 60%;
+}
+
+/**Login**/
+.login{
+    margin: 5rem 0 0 33rem;
+}
+
+.login input{
+    border-radius: .5rem;
+    background-color: #EEEBEB;
+    padding: .5rem 5rem .5rem .5rem;
+    font-family: 'PT-Sans', sans-serif;
+}
+.login h3{
+    margin-left: 4rem;
+    margin-bottom: 3rem;
+    padding: 0;
+}
+
+.boton-log{
+    margin-top: 1rem;
+    margin-left: 4.5rem;
+}
+
+
+/**YA**/
+.concuchara{
+    margin-top: 7rem !important;
+}
+

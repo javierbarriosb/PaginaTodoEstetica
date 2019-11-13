@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'BDTodoEstetica',
+    
     
 ]
 
@@ -124,4 +126,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #media files
 MEDIA_URL = '/media/'
-MEDIA_ROOt = os.path.join(BASE_DIR,"Media")
+MEDIA_ROOt = os.path.join(BASE_DIR,"media")
+
+# Auth redirects
+
+LOGIN_REDIRECT_URL = 'inicio:inicio'
+LOGOUT_REDIRECT_URL = 'inicio:inicio'
