@@ -31,15 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'BDTodoEstetica',
-    
-    
+    'BDTodoEstetica',   
 ]
 
 MIDDLEWARE = [
@@ -126,3 +125,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #media files
 MEDIA_URL = '/media/'
 MEDIA_ROOt = os.path.join(BASE_DIR,"media")
+
+#Auth redirects
+LOGIN_REDIRECT_URL = 'inicio:inicio'
+LOGOUT_REDIRECT_URL = 'inicio:inicio'
+
+if DEBUG:
+    EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+    EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+    #Aquí hay que configurar un email real para producción
+    pass
