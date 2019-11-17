@@ -126,9 +126,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #media files
 MEDIA_URL = '/media/'
+<<<<<<< HEAD
 MEDIA_ROOt = os.path.join(BASE_DIR,"media")
 
 # Auth redirects
 
 LOGIN_REDIRECT_URL = 'inicio:inicio'
 LOGOUT_REDIRECT_URL = 'inicio:inicio'
+=======
+MEDIA_ROOt = os.path.join(BASE_DIR,"media")
+>>>>>>> master
