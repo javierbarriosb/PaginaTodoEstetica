@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Todo Estetica - Inicio </title>
+
+    <title>TodoEstetica | {% block title %}{% endblock%}</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap" rel="stylesheet">
@@ -24,6 +25,7 @@
 
 </head>
 
+{% block header %}
 <body>
     <header id="header">
         <nav class="menu">
@@ -46,9 +48,10 @@
         </nav>
         {%include 'BDTodoEstetica/includes/menu.html'%}
     </header>
+{% endblock  %}
+{% block content %}{% endblock %}
 
-
-
+{% block slyder %}
     <div class="contenedor">
         <div class="col-xs-12">
             <div class="texto-titulo">
@@ -93,11 +96,10 @@
 
     </div>
     <div class="Fondo">
-
-
     </div>
+{% endblock %}
 
-
+{% block container %}
     <div class="nosotros parallax clearfix ">
         <div class="contenedor contenido-nosotros alineacion-nosotros">
             <h3>Sobre nosotros</h3>
@@ -108,11 +110,10 @@
 
     <main class="productos">
         <div class="contenedor">
-
             <section class="contenido-principal">
                 <h2>¡Ofertas!</h2>
                 {% for Productos in Productos %}
-                <article class="entrada ">
+                <article class="entrada">
                     <img src="{{Productos.Imagen.url}}" alt="texto entrada">
                     <div class="contenido">
                         <h3 class="precio">${{Productos.Precio}}</h3>
@@ -130,7 +131,9 @@
             </section>
         </div>
     </main>
+{% endblock %}
 
+{% block footer %}
     <footer class="site-footer seccion">
         <div class="contenedor contenedor-footer">
             <nav class="nav-footer">
@@ -141,13 +144,13 @@
             <nav>
                 <a href="#">Facebook |</a>
                 <a href="#">Instagram |</a>
-                <a href="#">Twitter</a>
             </nav>
+                <a href="#">Twitter</a>
 
             <p>Todos los Derechos Reservados 2019 &copy; </p>
         </div>
     </footer>
-
+{% endblock %}
 
     <script src="{% static 'js/headroom.min.js' %}"></script>
     <script src="{% static 'js/menu.js' %}"></script>

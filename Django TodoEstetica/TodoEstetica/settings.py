@@ -135,3 +135,9 @@ if DEBUG:
     EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
     #Aquí hay que configurar un email real para producción
     pass
+# Auth redirects
+
+LOGIN_REDIRECT_URL = 'inicio:inicio'
+LOGOUT_REDIRECT_URL = 'inicio:inicio'
+
+
