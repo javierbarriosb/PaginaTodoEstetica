@@ -9,7 +9,7 @@
 <main class="concuchara">
 <div class="card text-center">
   <div class="card-header">
-    Producto
+    {{object.NombreProducto}}
   </div>
   <div class="row center-xs">
     <div class="col-md-3">
@@ -17,7 +17,7 @@
     </div>
   </div>
   <div class="card-body">
-    <h2 class="card-title">{{object.NombreProducto}}</h2>
+    <h2 class="card-title">${{object.Precio}}</h2>
     <h5 class="card-title">{{object.Marca}}</h5>
     <p class="card-text">{{object.Descripcion}}</p>
     <span>{{object.NombreTienda}}</span>
@@ -30,7 +30,7 @@
     {%endif%}
   </div>
   <div class="card-footer text-muted">
-    2 days ago
+    {{object.Creacion}}
   </div>
 </div>
 </main>

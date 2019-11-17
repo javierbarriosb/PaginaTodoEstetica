@@ -32,7 +32,7 @@ class DetailProducto(DetailView):
 class ProductoCreate(CreateView):
     model = Producto
     fields = ['NombreProducto','Precio','Descripcion','Marca','Tienda','Imagen']
-    success_url = reverse_lazy('inicio:inicio')
+    success_url = reverse_lazy('inicio:lista')
     
 class ProductoUpdate(UpdateView):
     model = Producto
