@@ -35,8 +35,12 @@
 
             <div class="enlaces" id="enlaces">
 
-                <a href="{% url 'inicio:registro'%}"><i class="fa fa-user-plus" aria-hidden="true"></i>Registrarse</a>
-                <a href="/admin/"><i class="fa fa-sign-in" aria-hidden="true"></i>Iniciar Sesión</a>
+               {% if not request.user.is_authenticated %}
+                <a href="{% url 'signup'%}"><i class="fa fa-user-plus" aria-hidden="true"></i>Registrarse</a>
+                    <a href="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>Iniciar Sesión</a>
+                {% else %}
+                    <a href="{% url 'logout' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>Cerrar Sesión</a>
+                {% endif %}
                 <a href="{% url 'inicio:contacto'%}"><i class="fa fa-envelope-o" aria-hidden="true"></i>Contacto</a>
             </div>
         </nav>
