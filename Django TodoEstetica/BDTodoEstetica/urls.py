@@ -1,6 +1,7 @@
 from django.urls import path
 from django.conf import settings
 from . import views
+from django.contrib.auth.decorators import login_required 
 from .views import registro,inicio,contacto,listProducto,DetailProducto,ProductoCreate,ProductoUpdate,ProductoDelete
 
 pages_patterns = ([
