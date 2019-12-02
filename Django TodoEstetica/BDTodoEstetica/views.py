@@ -5,6 +5,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from .models import Producto,Tienda
 from django.urls import reverse_lazy
+from .forms import CreateProduct  
 
 
 # Create your views here.
@@ -38,7 +39,7 @@ class DetailProducto(StaffUser,DetailView):
    
 class ProductoCreate(StaffUser, CreateView):
     model = Producto
-    fields = ['NombreProducto','Precio','Descripcion','Marca','Tienda','Imagen']
+    form_class = CreateProduct
     success_url = reverse_lazy('inicio:lista')
     
  
