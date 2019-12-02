@@ -45,7 +45,7 @@ class ProductoCreate(StaffUser, CreateView):
  
 class ProductoUpdate(StaffUser,UpdateView):
     model = Producto
-    fields = ['NombreProducto','Precio','Descripcion','Marca','Tienda','Imagen']
+    form_class = CreateProduct
     template_name_suffix = '_update_form'
 
     def get_success_url(self):
