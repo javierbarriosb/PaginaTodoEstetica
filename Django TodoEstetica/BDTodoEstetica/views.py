@@ -33,6 +33,7 @@ class contacto (TemplateView):
 class listProducto(StaffUser,ListView):
     model = Producto
     ordering = ["-Creacion"]
+    paginate_by = 8
 
 class DetailProducto(StaffUser,DetailView):
     model = Producto
