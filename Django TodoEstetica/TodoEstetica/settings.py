@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'BDTodoEstetica',   
+    'BDTodoEstetica',
+    'rest_framework',   
 ]
 
 MIDDLEWARE = [
@@ -127,7 +128,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOt = os.path.join(BASE_DIR,"media")
 
 #Auth redirects
-LOGIN_REDIRECT_URL = 'inicio:inicio'
+#LOGIN_REDIRECT_URL = 'inicio:inicio'
 LOGOUT_REDIRECT_URL = 'inicio:inicio'
 
 if DEBUG:

@@ -659,4 +659,21 @@ textarea {
     margin-top: 8rem !important;
 }
 
+.formulario{
+    margin: auto;
+
+    padding-bottom: 30px;
+    width: 40rem;
+    background: #f2f2f2;
+}
+.desc{
+    height: 10px;
+}
+.mensaje{
+    width: 100%;
+    margin-top: 2.5rem;
+    text-align: center;
+    
+
+}
 
