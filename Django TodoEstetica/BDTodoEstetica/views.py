@@ -5,7 +5,9 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from .models import Producto,Tienda
 from django.urls import reverse_lazy
-from .forms import CreateProduct  
+from .forms import CreateProduct 
+from BDTodoEstetica.serializers import ProductoSerializer
+from rest_framework import generics 
 
 
 # Create your views here.
@@ -33,6 +35,7 @@ class contacto (TemplateView):
 class listProducto(StaffUser,ListView):
     model = Producto
     ordering = ["-Creacion"]
+    paginate_by = 8
 
 class DetailProducto(StaffUser,DetailView):
     model = Producto
@@ -54,3 +57,11 @@ class ProductoUpdate(StaffUser,UpdateView):
 class ProductoDelete(StaffUser,DeleteView):
     model = Producto
     success_url = reverse_lazy('inicio:lista')
+
+class ProductoList(generics.ListCreateAPIView):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
+
+class ProductoDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
